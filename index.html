@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk4Q319oYXXPvYZZnzfZlRqtju3CBoi6HQeQ&s" type="image/x-icon">
+<title>Para mi amor</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    font-family:Arial;
+    overflow:hidden;
+}
+
+.carta{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    width:90%;
+    max-width:400px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation:entrada 2s ease;
+}
+
+h1{
+    color:#e63946;
+}
+
+p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+.corazon{
+    font-size:40px;
+    animation:latido 1s infinite;
+}
+
+@keyframes latido{
+0%{transform:scale(1)}
+50%{transform:scale(1.3)}
+100%{transform:scale(1)}
+}
+
+@keyframes entrada{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* corazones flotando */
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:flotar 6s linear infinite;
+}
+
+@keyframes flotar{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="carta">
+
+<h1>❤️Para ti❤️</h1>
+
+<p>
+A veces es difícil explicar con palabras lo que alguien significa para uno, pero contigo todo se siente diferente.
+Tu sonrisa tiene esa forma <b>especial</b> de alegrar mis días, y tu manera de ser hace que cada momento se vuelva más bonito.<br>
+No sé qué traerá el futuro, pero sí sé que conocerte es algo que guardo con mucho <b>cariño en mi corazón.</b><br>
+Hay personas que llegan a la vida de uno y dejan una huella, y tú eres exactamente eso para mí.<br>
+Si algún día dudas de lo especial que eres, recuerda que hay alguien que piensa en ti más de lo que imaginas y que siempre desea verte feliz.
+</p>
+
+<div class="corazon">❤️</div>
+
+<p><b>Con cariño<br>Alejandro</b></p>
+
+</div>
+
+<script>
+
+/* corazones animados */
+
+function crearCorazon(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+
+setInterval(crearCorazon,400);
+
+</script>
+
+</body>
+</html>
